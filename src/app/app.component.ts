@@ -22,6 +22,8 @@ export class AppComponent {
       if (val['routerEvent']) {
         if (this.localStorageService.getValue(ne)) {
           this.getUserInfo();
+        } else {
+          this.loading = false;
         }
        }
     });
