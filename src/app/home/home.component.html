@@ -31,10 +31,10 @@
                 <div class="col-12 col-md-2 title p-2 text-center ">Usage Count</div>
             </div>
             <div *ngFor="let item of urls" class="row border-bottom">
-                <div class="col-12 col-md-4 p-2 t-cell"><span class="d-inline d-md-none">Old Link</span><a [href]="item.url">{{item.url}}</a></div>
-                <div class="col-12 col-md-4 p-2 t-cell"><span class="d-inline d-md-none">Short Link</span><a [href]="item.shortUrl">{{item.shortUrl}}</a></div>
-                <div class="col-12 col-md-2 p-2 text-center"><span class="d-inline d-md-none">Date</span>{{item.creationDate}}</div>
-                <div class="col-12 col-md-2 p-2 text-center"><span class="d-inline d-md-none">Usage Count</span>{{item.usageCount}}</div>
+                <div class="col-12 col-md-4 p-2 t-cell"><span class="d-inline d-md-none title">Old Link: </span><a [href]="item.url">{{item.url}}</a></div>
+                <div class="col-12 col-md-4 p-2 t-cell"><span class="d-inline d-md-none title">Short Link: </span><a [href]="item.shortUrl">{{item.shortUrl}}</a></div>
+                <div class="col-12 col-md-2 p-2 text-md-center"><span class="d-inline d-md-none title">Date: </span>{{item.creationDate}}</div>
+                <div class="col-12 col-md-2 p-2 text-md-center"><span class="d-inline d-md-none title">Usage Count: </span>{{item.usageCount}}</div>
             </div>
         </div>
     </div>
