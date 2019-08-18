@@ -26,7 +26,7 @@ export class UserComponent implements OnInit {
 
   getUrls() {
     this.urls = [];
-    this.api.getNUrls(10).subscribe((data) => {
+    this.api.getUserUrls(this.localStorageService.getValue('userKey')).subscribe((data) => {
       this.urls = data.map((item) => {
         item.shortUrl = environment.hostUrl + '/' + item.shortUrl;
         item.creationDate = item.creationDate.substr(0, 10);

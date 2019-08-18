@@ -10,7 +10,8 @@ const endpoint = environment.apiUrl + '/';
 const httpOptions = {
   headers: new HttpHeaders({
     'Accept': '*/*',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Cache-Control':	'no-store'
   })
 };
 
