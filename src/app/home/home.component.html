@@ -1,0 +1,71 @@
+<section class="container content">
+    <div class="row">
+        <div class="col-lg-10 offset-lg-1  col-md-12 offset-md-0">
+            <h1 class="title">URL Shorter</h1>
+            <label>
+                <input type="text" placeholder="Place your URL here" class="mb-4 mt-4 form-control input"
+                    [(ngModel)]=url>
+                <div class="error">{{urlError}}</div>
+            </label>
+        </div>
+        <div class="col-lg-8 offset-lg-1  col-md-8 offset-md-0">
+            <label>
+                <div class="d-flex align-items-center">
+                    <div>{{environment}}/</div>
+                    <input type="text" placeholder="Place short URL here" class="mb-4 mt-4 form-control input"
+                        [(ngModel)]=shortUrl>
+                </div>
+                <div class="error">{{shortUrlError}}</div>
+            </label>
+        </div>
+        <div class="col-lg-2  col-md-2">
+            <div class="mb-4 mt-4 button" style="width: auto;" (click)="createUrl()">
+                <div>Create URL</div><img src="../../assets/img/arrow.svg" alt="">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="row border-bottom">
+                <div class="col-4 title p-2">Old Link</div>
+                <div class="col-4 title p-2">Short Link</div>
+                <div class="col-2 title p-2 text-center">Date</div>
+                <div class="col-2 title p-2 text-center">Usage Count</div>
+            </div>
+            <div *ngFor="let item of urls" class="row border-bottom">
+                <div class="col-4 p-2"><a [href]="item.url">{{item.url}}</a></div>
+                <div class="col-4 p-2"><a [href]="item.shortUrl">{{item.shortUrl}}</a></div>
+                <div class="col-2 p-2 text-center">{{item.creationDate}}</div>
+                <div class="col-2 p-2 text-center">{{item.usageCount}}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" [ngClass]="{'show':showModal}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Your link</h4>
+                <button type="button" class="close" (click)="showModal=false">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="big-url">
+                    Old URL: <a [href]="urlElement.url">{{urlElement.url}}</a>
+                </div>
+                
+                <div class="short-url d-flex">
+                    New URL: <a [href]="urlElement.shortUrl">{{urlElement.shortUrl}}</a>
+                </div>
+
+                <div class="creation-date">Created: {{urlElement.creationDate}}</div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger button" (click)="showModal=false">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop fade" [ngClass]="{'show':showModal}" (click)="showModal=false"></div>

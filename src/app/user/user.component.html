@@ -1,0 +1,18 @@
+<section class="container content">
+    <div class="row">
+        <div class="col-12">
+            <div class="row border-bottom">
+                <div class="col-4 title p-2">Old Link</div>
+                <div class="col-4 title p-2">Short Link</div>
+                <div class="col-2 title p-2 text-center">Date</div>
+                <div class="col-2 title p-2 text-center">Usage Count</div>
+            </div>
+            <div *ngFor="let item of urls" class="row border-bottom">
+                <div class="col-4 p-2"><a [href]="item.url">{{item.url}}</a></div>
+                <div class="col-4 p-2"><a [href]="item.shortUrl">{{item.shortUrl}}</a></div>
+                <div class="col-2 p-2 text-center">{{item.creationDate}}</div>
+                <div class="col-2 p-2 text-center">{{item.usageCount}}</div>
+            </div>
+        </div>
+    </div>
+</section>

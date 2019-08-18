@@ -1,0 +1,15 @@
+<header>
+    <div class="navbar">
+        <div class="container d-flex justify-content-between">
+            <a [routerLink]="['/']" class="navbar-brand d-flex align-items-center">
+                <img src="../assets/img/logo.svg" alt="">
+            </a>
+            <a [routerLink]="['/registration']" *ngIf="!userName" [ngClass]="{'loading':loading}">Sign In / Sign Up</a>
+            <div  *ngIf="userName"  [ngClass]="{'loading':loading}">
+                <a [routerLink]="['/user']" >{{userName}}</a>  / 
+                <span (click)="logout()">Logout</span>   
+            </div>
+        </div>
+    </div>
+</header>
+<router-outlet></router-outlet>

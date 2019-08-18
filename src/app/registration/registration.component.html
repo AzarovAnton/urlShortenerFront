@@ -1,0 +1,51 @@
+<section class="container content">
+    <div class="row">
+        <div class="col-lg-4 col-md-5 offset-md-1 col-sm-12 offset-sm-0  d-md-block d-none"
+            [ngClass]="{'d-block':!col}">
+            <h3 class="title">Sign up  </h3>
+            <label>   
+                <input type="text" placeholder="Name" class="mb-4 mt-4 form-control input" [(ngModel)]=registerUser.userName>
+                <div class="error" *ngIf=registerUserErrors.userName>{{registerUserErrors.userName}}</div>
+            </label>   
+            <label>   
+                <input type="text" placeholder="Email" class="mb-4 mt-4 form-control input" [(ngModel)]=registerUser.email>
+                <div class="error" *ngIf=registerUserErrors.email>{{registerUserErrors.email}}</div>
+            </label>   
+            <label>   
+            <input type="password" placeholder="Password" class="mb-4 mt-4 form-control input"
+                [(ngModel)]=registerUser.password>
+                <div class="error" *ngIf=registerUserErrors.password>{{registerUserErrors.password}}</div>
+            </label>   
+            <label>   
+            <input type="password" placeholder="Password" class="mb-4 mt-4 form-control input"
+                [(ngModel)]=registerUser.password2>
+                <div class="error" *ngIf=registerUserErrors.password2>{{registerUserErrors.password2}}</div>
+            </label>   
+            <div class="d-flex justify-content-between">
+                <div class="switch-col d-md-none d-flex align-items-center" (click)="changeCol(true)">
+                    Already have account
+                </div>
+                <div class="button" (click)="register()">Registrate <img src="../../assets/img/arrow.svg" alt=""></div>
+            </div>
+        </div>
+        <div class="col-lg-4 offset-lg-2 col-md-5 offset-lg-0 col-sm-12 offset-sm-0 d-md-block d-none"
+            [ngClass]="{'d-block':col}">
+            <h3 class="title">Sign in</h3>
+            <label>   
+                <input type="text" placeholder="Email" class="mb-4 mt-4 form-control input" [(ngModel)]=loginUser.email>
+                <div class="error" *ngIf=loginUserErrors.email>{{loginUserErrors.email}}</div>
+            </label>
+            <label>
+                <input type="password" placeholder="Password" class="mb-4 mt-4 form-control input"
+                [(ngModel)]=loginUser.password>
+                <div class="error"  *ngIf=loginUserErrors.password>{{loginUserErrors.password}}</div>
+            </label>
+            <div class="d-flex justify-content-between">
+                <div class="switch-col d-md-none d-flex align-items-center" (click)="changeCol(false)">
+                    Don't have account
+                </div>
+                <div class="button" (click)="login()">Login<img src="../../assets/img/arrow.svg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>

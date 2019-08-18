@@ -1,0 +1,9 @@
+.switch-col{
+    cursor: pointer;
+    margin-right: 50px;
+    color: #554E4E;
+    &:hover{
+        text-decoration: underline;
+        color: #DDDDDD;
+    }
+}
