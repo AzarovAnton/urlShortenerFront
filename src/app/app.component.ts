@@ -18,11 +18,12 @@ export class AppComponent {
 
   ngOnInit(): void {
     const ne = 'userKey';
-    if (this.localStorageService.getValue(ne)) {
-      this.getUserInfo();
-    }
     this.router.events.subscribe((val: any) => {
-      if (val['routerEvent']) { this.getUserInfo(); }
+      if (val['routerEvent']) {
+        if (this.localStorageService.getValue(ne)) {
+          this.getUserInfo();
+        }
+       }
     });
   }
   getUserInfo(): void {
