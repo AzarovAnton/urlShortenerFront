@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
   getUrls() {
     this.urls = [];
-    this.api.getNUrls(5).subscribe((data) => {
+    this.api.getUrls().subscribe((data) => {
       this.urls = data.map((item) => {
         item.shortUrl = environment.hostUrl + '/' + item.shortUrl;
         item.creationDate = item.creationDate.substr(0, 10);
