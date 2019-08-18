@@ -96,13 +96,12 @@ input.input{
         }
     }
 }
-
 .modal-content{
     pointer-events: none;
 }
 
 .t-cell{
-    height: 30px;
+    height: 40px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
