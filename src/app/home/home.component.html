@@ -8,18 +8,18 @@
                 <div class="error">{{urlError}}</div>
             </label>
         </div>
-        <div class="col-lg-8 offset-lg-1  col-md-8 offset-md-0">
+        <div class="col-lg-8 offset-lg-1  col-md-8 offset-md-0 mb-4 mt-4 ">
             <label>
                 <div class="d-flex align-items-center">
                     <div class="host">/</div>
-                    <input type="text" placeholder="Place short URL here" class="mb-4 mt-4 form-control input short-url" 
+                    <input type="text" placeholder="Place short URL here" class="form-control input short-url" 
                         [(ngModel)]=shortUrl>
                 </div>
                 <div class="error">{{shortUrlError}}</div>
             </label>
         </div>
-        <div class="col-lg-2  col-md-2">
-            <div class="mb-4 mt-4 button" style="width: auto;" (click)="createUrl()">
+        <div class="col-lg-2  col-md-2 mb-4 mt-4 ">
+            <div class="button" style="width: auto;" (click)="createUrl()">
                 <div>Create URL</div><img src="../../assets/img/arrow.svg" alt="">
             </div>
         </div>

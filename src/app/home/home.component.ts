@@ -63,6 +63,7 @@ export class HomeComponent implements OnInit {
               this.urlElement.shortUrl = environment.hostUrl + '/' + this.urlElement.shortUrl;
               this.urlElement.creationDate = this.urlElement.creationDate.substr(0, 10);
               this.showModal = true;
+              this.getUrls();
             } else {
               this.shortUrlError = data.errors.shortUrl ? data.errors.shortUrl : '';
               this.urlError = data.errors.url ? data.errors.url : '';
